@@ -2,7 +2,7 @@
 import os
 
 '''
-当suffix = ''时，找到指定路径下所有的文件名，也可指定后缀寻找该路径下所有以该后缀结尾的文件名
+当suffix = ''时，找到指定路径下所有的文件名，也可指定后缀寻找该路径下所有以该后缀结尾的文件名。
 '''
 def get_filename(path, suffix, res):
     if os.path.isdir(path):

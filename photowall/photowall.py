@@ -2,10 +2,10 @@ import os
 import argparse
 from PIL import Image
 
-''' 520照片墙 '''
+''' 将图片制作为520照片墙 '''
 
 '''一些超参'''
-CELLSIZE = 360
+CELLSIZE = 256
 
 target_path = r'F:\tools\photowall\images'
 
@@ -15,7 +15,7 @@ def rename_image(target_path):
         os.rename(os.path.join(target_path, each), os.path.join(target_path, 'image%s.jpg' % idx))
 
 '''图片读取'''
-def read_image(img_path, target_size=(360, 360)):
+def read_image(img_path, target_size=(256, 256)):
     img = Image.open(img_path)
     image = img.resize(target_size)
     return image
@@ -52,9 +52,9 @@ def main(pictures_dir, template_path):
     image_new.save('picturewall.png')
 
 if __name__ == '__main__':
-    rename_image(target_path)
+    # rename_image(target_path)
     parser = argparse.ArgumentParser(description="Picture Wall Generator.")
-    parser.add_argument('-t', dest='template_path', help='Template path.', default='templates/1.tmp')
+    parser.add_argument('-t', dest='template_path', help='Template path.', default='templates/template.txt')
     parser.add_argument('-p', dest='pictures_dir', help='Pictures dir.', default='images')
     args = parser.parse_args()
     template_path = args.template_path

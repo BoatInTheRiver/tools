@@ -79,7 +79,6 @@ class WbGrawler():
         results = self.parserJson(page_json)
         self.imgDownload(results)
 
-
 if __name__ == '__main__':
     wg = WbGrawler(1,30)
     pool = threadpool.ThreadPool(10)
